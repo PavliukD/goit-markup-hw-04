@@ -7,6 +7,7 @@
   --section-secondary-background-color: #f5f4fa;
   --main-body-color: #ffffff;
   --button-hover-color: #188ce8;
+  --social-network-color: #afb1b8;
 }
 
 /*если надо выделить границы элемента - используй outline: 2px solid tomato;*/
@@ -126,13 +127,16 @@ p {
   margin-left: auto;
 }
 
-.contacts .item::before {
-  content: '';
-  display: inline-block;
-  margin-right: 10px;
-  width: 16px;
-  height: 12px;
-  outline: 1px solid tomato;
+.contacts .item {
+  display: flex;
+  align-items: center;
+  color: var(--primary-text-color);
+  fill: var(--primary-text-color);
+}
+
+.contacts .item:hover {
+  color: var(--action-color);
+  fill: var(--action-color);
 }
 
 .contacts .item + .item {
@@ -140,11 +144,11 @@ p {
 }
 
 .header-contacts {
-  color: var(--primary-text-color);
+  color: inherit;
 }
 
-.header-contacts:hover {
-  color: var(--action-color);
+.contacts-icon {
+  margin-right: 10px;
 }
 
 /*hero*/
@@ -218,13 +222,11 @@ p {
 
 .features-list {
   display: flex;
-}
-
-.features-list .item + .item {
-  margin-left: 30px;
+  margin-left: -30px;
 }
 
 .features-list .item {
+  margin-left: 30px;
   width: calc((100%-90px) / 4);
 }
 
@@ -239,13 +241,16 @@ p {
 .features-text {
   line-height: 1.7;
   margin-top: 10px;
+  letter-spacing: 0.03em;
 }
 
 .features-picture {
-  display: block;
+  display: flex;
   width: 100%;
   height: 120px;
   background-color: var(--section-secondary-background-color);
+  align-items: center;
+  justify-content: center;
 }
 
 .section-title {
@@ -310,6 +315,56 @@ p {
 
 .photo {
   display: block;
+}
+
+.our-team-links {
+  display: flex;
+  justify-content: center;
+}
+
+.our-team-link {
+  margin: 0;
+  padding: 0;
+}
+
+.our-team-links .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-top: 16px;
+  fill: var(--social-network-color);
+  height: 44px;
+  width: 44px;
+}
+
+.our-team-links .item:hover {
+  fill: var(--main-body-color);
+  background-color: var(--action-color);
+}
+
+.our-team-social-icon {
+  display: block;
+  fill: inherit;
+}
+
+.our-team-links .item:not(:first-child) {
+  margin-left: 10px;
+}
+
+.our-clients-list {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.our-client-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
 }
 
 /*footer*/
